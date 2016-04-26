@@ -21,4 +21,13 @@
         android:layout_height="wrap_content"
         android:text="Try Me !!!"
         android:id="@+id/tryMeButton"/>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Force Crash!"
+        android:id="@+id/forceCrashButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
 </LinearLayout>

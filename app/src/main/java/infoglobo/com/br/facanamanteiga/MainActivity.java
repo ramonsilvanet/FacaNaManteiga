@@ -11,6 +11,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import timber.log.Timber;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
+
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.textView)
@@ -19,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        Fabric.with(this, new Crashlytics());
 
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
         myTextView.setText("Alo mundo, butter knife");
@@ -31,5 +35,10 @@ public class MainActivity extends AppCompatActivity {
         Timber.d("Ouch button clicked");
         Toast.makeText(this, "Ouch !!!", Toast.LENGTH_LONG).show();
 
+    }
+
+    @OnClick(R.id.forceCrashButton)
+    public void forceCrash(View view){
+        throw new RuntimeException("Este é um crash forcado");
     }
 }

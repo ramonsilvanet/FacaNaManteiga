@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="infoglobo.com.br.facanamanteiga">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
+        <!--Add Crashlytics key -->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="bf55f5875f7371c4224c205a3bab9fbc454ea410" />
+
     </application>
 
 </manifest>
